@@ -1,0 +1,44 @@
+.actorCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.actorCardContainer {
+  width: 100px;
+  height: 150px;
+  border-radius: 8px;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.castItemDescr {
+  margin-bottom: 8px;
+}
+
+.actorImg {
+  width: 100px;
+}
+
+@media screen and (min-width: 768px) {
+  .actorImg {
+    width: 164px;
+  }
+  .actorCardContainer {
+    width: 164px;
+    height: 246px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .actorImg {
+    width: 184px;
+  }
+
+  .actorCardContainer {
+    width: 184px;
+    height: 276px;
+  }
+}

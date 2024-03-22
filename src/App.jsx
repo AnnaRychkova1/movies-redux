@@ -1,13 +1,33 @@
-// import css './App.module.css';
+import { Route, Routes } from 'react-router-dom';
+import { Suspense, lazy } from 'react';
+// import css from './App.module.css';
 
-function App() {
+import Loader from './components/Loader/Loader';
+import Navigation from './components/Navigation/Navigation';
+
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+const MoviesPage = lazy(() => import('./pages/MoviesPage/MoviesPage'));
+const MovieDetailsPagee = lazy(() =>
+  import('./pages/MovieDetailsPage/MovieDetailsPage')
+);
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
+
+const App = () => {
   return (
     <>
-      <div>
-        <h1>Vite + React</h1>
-      </div>
+      <Navigation />
+      <main>
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/movies" element={<MoviesPage />} />
+            <Route path="/movies/:movieId/*" element={<MovieDetailsPagee />} />
+            <Route path="*" element={<NotFoundPage to="/" replace />} />
+          </Routes>
+        </Suspense>
+      </main>
     </>
   );
-}
+};
 
 export default App;
