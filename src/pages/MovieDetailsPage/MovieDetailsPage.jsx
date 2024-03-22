@@ -64,14 +64,12 @@ const MovieDetailsPage = () => {
               Go back
             </Link>
             <div className={css.mainMovieInfo}>
-              <div className={css.imgContainer}>
-                <img
-                  className={css.movieImg}
-                  src={getImg(movieData.poster_path)}
-                  width="500"
-                  alt={movieData.title}
-                />
-              </div>
+              <img
+                className={css.movieImg}
+                src={getImg(movieData.poster_path)}
+                width="500"
+                alt={movieData.title}
+              />
               <div className={css.movieInfo}>
                 <h1>
                   {movieData.title} ({year})

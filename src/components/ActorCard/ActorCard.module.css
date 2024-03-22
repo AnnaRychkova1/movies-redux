@@ -3,42 +3,45 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  overflow: hidden;
+  height: 236px;
 }
 
 .actorCardContainer {
-  width: 100px;
-  height: 150px;
-  border-radius: 8px;
-  overflow-x: hidden;
   display: flex;
   align-items: center;
-}
-
-.castItemDescr {
-  margin-bottom: 8px;
+  width: 128px;
+  border-radius: 8px;
 }
 
 .actorImg {
-  width: 100px;
+  width: 128px;
 }
 
 @media screen and (min-width: 768px) {
-  .actorImg {
-    width: 164px;
+  .actorCard {
+    height: 264px;
   }
+
+  .actorImg {
+    width: 144px;
+  }
+
   .actorCardContainer {
-    width: 164px;
-    height: 246px;
+    width: 144px;
   }
 }
 
 @media screen and (min-width: 1024px) {
+  .actorCard {
+    height: 284px;
+  }
+
   .actorImg {
-    width: 184px;
+    width: 164px;
   }
 
   .actorCardContainer {
-    width: 184px;
-    height: 276px;
+    width: 164px;
   }
 }

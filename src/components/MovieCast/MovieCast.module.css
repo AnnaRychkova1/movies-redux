@@ -17,9 +17,11 @@
 }
 
 .castItem {
-  width: 120px;
+  width: 136px;
+  height: 238px;
   padding: 8px;
-  font-size: 10px;
+  font-size: 12px;
+  text-align: center;
   border-radius: 15px;
 
   background-color: rgba(255, 255, 0, 0.1);
@@ -36,14 +38,16 @@
 
 @media screen and (min-width: 768px) {
   .castItem {
-    width: 180px;
+    width: 164px;
     font-size: 14px;
+    height: 264px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .castItem {
-    width: 200px;
-    font-size: 14px;
+    width: 184px;
+    height: 284px;
+    font-size: 16px;
   }
 }

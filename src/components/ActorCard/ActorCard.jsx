@@ -4,7 +4,7 @@ import css from './ActorCard.module.css';
 const ActorCard = ({ actor }) => {
   return (
     <div className={css.actorCard}>
-      <div className={css.castItemDescr}>
+      <div>
         <p>{actor.name}</p>
         <p>
           Character:{' '}

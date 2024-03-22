@@ -1,6 +1,7 @@
 .mainMovieInfo {
   margin-top: 24px;
   display: flex;
+  flex-direction: row;
   gap: 24px;
   margin-bottom: 24px;
   padding-left: 24px;
@@ -13,12 +14,9 @@
   gap: 24px;
 }
 
-.imgContainer {
-  border: 2px solid var(--main-green);
-}
-
 .movieImg {
-  width: 300px;
+  border: 2px solid var(--main-green);
+  width: 280px;
 }
 
 .genres {
@@ -99,12 +97,24 @@
 
 @media screen and (min-width: 768px) {
   .movieImg {
-    width: 380px;
+    width: 350px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .movieImg {
     width: 500px;
+  }
+}
+
+@media screen and (max-width: 624px) {
+  .mainMovieInfo {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .addInfo {
+    flex-direction: column;
   }
 }
