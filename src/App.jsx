@@ -4,6 +4,8 @@ import { Suspense, lazy } from 'react';
 
 import Loader from './components/Loader/Loader';
 import Navigation from './components/Navigation/Navigation';
+// import MovieCast from './components/MovieCast/MovieCast';
+// import MovieReviews from './components/MovieReviews/MovieReviews';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const MoviesPage = lazy(() => import('./pages/MoviesPage/MoviesPage'));
@@ -11,6 +13,10 @@ const MovieDetailsPagee = lazy(() =>
   import('./pages/MovieDetailsPage/MovieDetailsPage')
 );
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
+const MovieCast = lazy(() => import('./components/MovieCast/MovieCast'));
+const MovieReviews = lazy(() =>
+  import('./components/MovieReviews/MovieReviews')
+);
 
 const App = () => {
   return (
@@ -21,7 +27,10 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/movies" element={<MoviesPage />} />
-            <Route path="/movies/:movieId/*" element={<MovieDetailsPagee />} />
+            <Route path="/movies/:movieId" element={<MovieDetailsPagee />}>
+              <Route path="cast" element={<MovieCast />} />
+              <Route path="reviews" element={<MovieReviews />} />
+            </Route>
             <Route path="*" element={<NotFoundPage to="/" replace />} />
           </Routes>
         </Suspense>

@@ -1,10 +1,9 @@
-import { Suspense, lazy, useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import {
   Link,
   NavLink,
-  Route,
-  Routes,
+  Outlet,
   useLocation,
   useParams,
 } from 'react-router-dom';
@@ -14,11 +13,6 @@ import css from './MovieDetailsPage.module.css';
 
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import Loader from '../../components/Loader/Loader';
-
-const MovieCast = lazy(() => import('../../components/MovieCast/MovieCast'));
-const MovieReviews = lazy(() =>
-  import('../../components/MovieReviews/MovieReviews')
-);
 
 const getNavLinkClassNames = ({ isActive }) =>
   clsx(css.addItems, {
@@ -118,10 +112,7 @@ const MovieDetailsPage = () => {
               </ul>
             </div>
             <Suspense fallback={<Loader />}>
-              <Routes>
-                <Route path="cast" element={<MovieCast />} />
-                <Route path="reviews" element={<MovieReviews />} />
-              </Routes>
+              <Outlet />
             </Suspense>
           </div>
         ) : (
