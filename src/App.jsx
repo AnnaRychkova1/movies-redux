@@ -4,8 +4,6 @@ import { Suspense, lazy } from 'react';
 
 import Loader from './components/Loader/Loader';
 import Navigation from './components/Navigation/Navigation';
-// import MovieCast from './components/MovieCast/MovieCast';
-// import MovieReviews from './components/MovieReviews/MovieReviews';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const MoviesPage = lazy(() => import('./pages/MoviesPage/MoviesPage'));
